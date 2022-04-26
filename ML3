@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+from sklearn import tree
+def Show():
+    data_frame = pd.read_csv("MarvellousInfosystems_PlayPredictor.csv")
+    print(data_frame.head())
+    print("Length of Data is:-",len(data_frame))
+
+    print('Features of Weather Dataset is:-')
+    dse = data_frame["Temperature"].unique()
+    print(dse)
+    ase = data_frame["Wether"].unique()
+    print(ase)
+    
+ def main():
+    Show()
+if __name__=="__main__":
+    main()
