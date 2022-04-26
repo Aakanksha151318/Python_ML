@@ -1,0 +1,24 @@
+import numpy as np
+import pandas as pd
+from sklearn import tree
+from sklearn import preprocessing
+
+def Show():
+    data_frame = pd.read_csv("MarvellousInfosystems_PlayPredictor.csv")
+    print(data_frame.head())
+    print("Length of Data is:-",len(data_frame))
+
+    print('Features of Weather Dataset is:-')
+    dse = data_frame["Temperature"].unique()
+    print(dse)
+    ase = data_frame["Wether"].unique()
+    print(ase)
+
+    label_encoder = preprocessing.LabelEncoder()
+    data_frame["Temperature"] = label_encoder.fit_transform(data_frame["Temperature"])
+    gk = data_frame["Temperature"].unique()
+    print("After Encoding Temperature :-",gk)
+    
+def main():
+  Show()
+if __name__=="__main__":
